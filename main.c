@@ -2,17 +2,17 @@
 #include<string.h>//stringlen()
 #include<stdlib.h>
 
-//Caesar Cipher Function
-void caesarCipher(char* ToCode, int key);
+//Define my Caesar Cipher Function
+void caesarCipher(char* plainText, int key);
 
 int main(void){
+	float x;
+	printf("ent: ");
+	scanf("%f", &x);
+	int key = x;
 	
-	int key;
-	int x;
-	printf("key: ");
-	scanf("%d", &x);
-	key = x;
-	char ToCode[101];
+	
+	char plainText[101];
 	
 	
 	
@@ -20,27 +20,29 @@ int main(void){
 	printf("Please enter the plain text you want to encrypt: ");
 	
 	//Get the users text input and store it in plainText variable
-	fgets(plainText, sizeof(ToCode), stdin);
+	fgets(plainText, sizeof(plainText), stdin);
 	
 	//Print the ciphered text
 	printf("The ciphered text is : ");
 	
 	//Print the ciphered text
-	caesarCipher(ToCode, key);
+	caesarCipher(plainText, key);
 	
-	
+	//system("pause"); // Comment out if you are not using windows OS
 }
 
-void caesarCipher(char* ToCode, int key){
+void caesarCipher(char* plainText, int key){
 	
 	int i=0;
 	int cypherValue;
 	char cypher;
 	
-	while( plainText[i] != '\0' && strlen(ToCode)-1 > i){
-		cypherValue = ((int)ToCode[i] -97 + key) % 26 + 97;
+	while( plainText[i] != '\0' && strlen(plainText)-1 > i){
+		cypherValue = ((int)plainText[i] -97 + key) % 26 + 97;
 		cypher = (char)(cypherValue);
 		
 		printf("%c", cypher);
 		i++;
 	}
+	printf("\n");
+}
