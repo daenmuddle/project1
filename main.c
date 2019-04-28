@@ -12,6 +12,7 @@ int find_index(char code[],char char_to_find){
   return -1;
 }
 
+//Define substitution cipher encode
 char* encrypt(char *message,char code[]){
   int length = strlen(message);
   char *encrypted_message = (char *) malloc(sizeof(char)*length);
@@ -27,6 +28,7 @@ char* encrypt(char *message,char code[]){
   return encrypted_message;
 }
 
+//Define substitution cipher decode
 char *decrypt(char *message,char code[]){
   int length = strlen(message);
   char *decrypted_message = (char *) malloc(sizeof(char)*length);
@@ -42,6 +44,7 @@ char *decrypt(char *message,char code[]){
   return decrypted_message;
 }
 
+//Define Ceaser cipher encode
 void caesarCipherEncode(char* plainText, int key){
 	
 	int i=0;
@@ -69,6 +72,8 @@ void caesarCipherEncode(char* plainText, int key){
 	}
 	printf("\n");
 };
+
+//Define Ceaser cipher decode
 void caesarCipherDecode(char* plainText, int key){
 	
 	int i=0;
@@ -104,57 +109,35 @@ int main(){
  
  int type;
  
- printf("1 for sub, 2 for ceaser: ");
- scanf("%d", &type);
- printf("\n");
- printf("\n");
- printf("\n");
- printf("\n");
- printf("\n");
- printf("\n");
- printf("\n");
- printf("\n");
- printf("\n");
- printf("\n");
- printf("\n");
- printf("\n");
- printf("\n");
- printf("\n");
- printf("\n");
+// Asking user to Choose which type of Cipher to use
+printf("Please Make a selection from the following options:\n\n");
+printf("* For Substitution Cipher, press 1\n");
+printf("* For Ceaser Cipher, press 2\n");
+scanf("%d", &type);
+printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+ 
  
  if(type == 1)
-{    
+{   
+    //User must hard code the message to encrypt or decrypt and insert Cipher key here
     char *message = "test message";
     char code[26] = {'b','a','c','d','s','f','g','h','i','j','k','l','m','n','o','p','q','r','e','t','u','v','w','x','y','z'};
     char *encrypted_message = encrypt(message,code);
     char *decrypted_message = decrypt(encrypted_message,code);
     int select;
     
-    printf("Please Make a selection from the following options:\n");
-    printf("\n");
+    //Asking user if they would like to encrypt or decrypt the Substitution Cipher
+    printf("Please Make a selection from the following options:\n\n");
     printf("* To encrypt a message press 1\n");
     printf("* To decrypt a message press 2\n");
     printf("\n");
     printf("Selection: ");
     scanf("%d", &select);
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    
     
     if(select == 1)
-    printf("The Encoded text is: %s\n",encrypted_message);
+    printf("The original message was: %s\n\nThe Encoded text is: %s\n",message, encrypted_message);
     
     if(select == 2)
     printf("The Decoded text is: %s\n",decrypted_message);
@@ -162,35 +145,23 @@ int main(){
     return 0;
 } 
  
+ 
 if(type == 2);
 {
     int select;
-    
-    printf("Please Make a selection from the following options:\n");
-    printf("\n");
+    //Asking user if they would like to encrypt or decrypt the Ceaser Cipher
+    printf("Please Make a selection from the following options:\n\n");
     printf("* To encrypt a message press 1\n");
     printf("* To decrypt a message press 2\n");
     printf("\n");
     printf("Selection: ");
     scanf("%d", &select);
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
-    printf("\n");
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+    
     
     if(select == 1)
-    {
+    {   
+        //Asking user to enter Cipher key
         int key;
         printf("Please enter Cipher key: ");
         scanf("%d", &key);
@@ -198,7 +169,7 @@ if(type == 2);
         
         char plainText[101];
 	
-	    //Ask the user for the plain text to encrypt
+	    //Asking the user for the text to encrypt
 	    printf("Please enter the text you want to encrypt: ");
 	    scanf("%c", &plainText);
 	    
@@ -206,18 +177,20 @@ if(type == 2);
 	    //Get the users text input and store it in plainText variable
 	    fgets(plainText, sizeof(plainText), stdin);
 	
-	    //Print the ciphered text
+	    //Printing the ciphered text
 	    printf("\n");
 	    printf("The Encoded text is: ");
 	
-	    //Print the ciphered text
+	    //Printing the ciphered text
 	    caesarCipherEncode(plainText, key);
 	
 	    return 0; 
     }
     
+    
     if(select == 2)
     {
+        //Asking user to enter Cipher key
         int key;
         printf("Please enter Cipher key: ");
         scanf("%d", &key);
@@ -225,7 +198,7 @@ if(type == 2);
         
         char plainText[101];
 	
-	    //Ask the user for the plain text to encrypt
+	    //Asking the user for the plain text to encrypt
 	    printf("Please enter the text you want to Decrypt: ");
 	    scanf("%c", &plainText);
 	    
@@ -233,17 +206,15 @@ if(type == 2);
 	    //Get the users text input and store it in plainText variable
 	    fgets(plainText, sizeof(plainText), stdin);
 	    printf("\n");
-	    //Print the ciphered text
+	    //Printing the ciphered text
 	    printf("The Decoded text is: ");
 	
-	    //Print the ciphered text
+	    //Printing the ciphered text
 	    caesarCipherDecode(plainText, key);
 	
 	    return 0; 
     }
-  	
   
  }
-  
-  
+ 
 }
