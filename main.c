@@ -61,7 +61,9 @@ void caesarCipherEncode(char* plainText, int key){
 		    cypher = (char)(cypherValue);
 		    printf("%c", cypher);
 		}
-		
+		if((int)plainText[i] >= ' ' && (int)plainText[i]<=' '){
+	    printf(" ");
+	    }
 		i++;
 	}
 	printf("\n");
@@ -88,6 +90,9 @@ void caesarCipherDecode(char* plainText, int key){
 		cypher = (char)(cypherValue);
 		
 		printf("%c", cypher);
+	    }
+	    if((int)plainText[i] >= ' '){
+	    printf(" ");
 	    }
 		i++;
 	}
