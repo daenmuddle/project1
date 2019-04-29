@@ -12,7 +12,7 @@ int find_index(char code[],char char_to_find){
   return -1;
 }
 
-//Define substitution cipher encode
+//Define substitution cipher encode function
 char* encrypt(char *message,char code[]){
   int length = strlen(message);
   char *encrypted_message = (char *) malloc(sizeof(char)*length);
@@ -28,7 +28,7 @@ char* encrypt(char *message,char code[]){
   return encrypted_message;
 }
 
-//Define substitution cipher decode
+//Define substitution cipher decode function
 char *decrypt(char *message,char code[]){
   int length = strlen(message);
   char *decrypted_message = (char *) malloc(sizeof(char)*length);
@@ -44,7 +44,7 @@ char *decrypt(char *message,char code[]){
   return decrypted_message;
 }
 
-//Define Ceaser cipher encode
+//Define Ceaser cipher encode function
 void caesarCipherEncode(char* plainText, int key){
 	
 	int i=0;
@@ -73,7 +73,7 @@ void caesarCipherEncode(char* plainText, int key){
 	printf("\n");
 };
 
-//Define Ceaser cipher decode
+//Define Ceaser cipher decode function
 void caesarCipherDecode(char* plainText, int key){
 	
 	int i=0;
@@ -97,9 +97,10 @@ void caesarCipherDecode(char* plainText, int key){
 		
 		printf("%c", cypher);
 	    }
-	    if((int)plainText[i] >= ' '){
+	    if((int)plainText[i] >= ' ' && (int)plainText[i]<=' '){
 	    printf(" ");
-	    }
+        }
+
 		i++;
 	}
 	printf("\n");
@@ -108,11 +109,40 @@ void caesarCipherDecode(char* plainText, int key){
 int main(){
  
  int type;
+// The Below lines of \n's is for asthetic only
+printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+printf("####### #     #  #####  ####### ######  ####### ######        #    ######  #######  #####  ####### ######  ####### ######  \n");   
+printf("#       ##    # #     # #     # #     # #       #     #      #     #     # #       #     # #     # #     # #       #     # \n");   
+printf("#       # #   # #       #     # #     # #       #     #     #      #     # #       #       #     # #     # #       #     # \n");   
+printf("#####   #  #  # #       #     # #     # #####   ######     #       #     # #####   #       #     # #     # #####   ######  \n");   
+printf("#       #   # # #       #     # #     # #       #   #     #        #     # #       #       #     # #     # #       #   #   \n");   
+printf("#       #    ## #     # #     # #     # #       #    #   #         #     # #       #     # #     # #     # #       #    #  \n");   
+printf("####### #     #  #####  ####### ######  ####### #     # #          ######  #######  #####  ####### ######  ####### #     # \n");  
+printf("\n");    
+printf("####### ####### ######      #####  #     # ######   #####  ####### ### ####### #     # ####### ### ####### #     #       #    #     # ###### \n");
+printf("#       #     # #     #    #     # #     # #     # #     #    #     #     #    #     #    #     #  #     # ##    #      # #   ##    # #     #\n");
+printf("#       #     # #     #    #       #     # #     # #          #     #     #    #     #    #     #  #     # # #   #     #   #  # #   # #     #\n");
+printf("#       #     # #     #    #       #     # #     # #          #     #     #    #     #    #     #  #     # # #   #     #   #  # #   # #     #\n");
+printf("#####   #     # ######      #####  #     # ######   #####     #     #     #    #     #    #     #  #     # #  #  #    #     # #  #  # #     #\n");
+printf("#       #     # #   #            # #     # #     #       #    #     #     #    #     #    #     #  #     # #   # #    ####### #   # # #     #\n");
+printf("#       #     # #    #     #     # #     # #     # #     #    #     #     #    #     #    #     #  #     # #    ##    #     # #    ## #     #\n");
+printf("#       ####### #     #     #####   #####  ######   #####     #    ###    #     #####     #    ### ####### #     #    #     # #     # ###### \n");
+printf("\n");
+printf("######  ####### #######    #    ####### ### ####### #     #     #####  ### ######  #     # ####### ###### \n"); 
+printf("#     # #     #    #      # #      #     #  #     # ##    #    #     #  #  #     # #     # #       #     #\n");
+printf("#     # #     #    #     #   #     #     #  #     # # #   #    #        #  #     # #     # #       #     #\n");
+printf("######  #     #    #    #     #    #     #  #     # #  #  #    #        #  ######  ####### #####   ###### \n");  
+printf("#   #   #     #    #    #######    #     #  #     # #   # #    #        #  #       #     # #       #   #  \n");   
+printf("#    #  #     #    #    #     #    #     #  #     # #    ##    #     #  #  #       #     # #       #    # \n");  
+printf("#     # #######    #    #     #    #    ### ####### #     #     #####  ### #       #     # ####### #     #\n");
  
+
+printf("\n\n"); 
 // Asking user to Choose which type of Cipher to use
 printf("Please Make a selection from the following options:\n\n");
 printf("* For Substitution Cipher, press 1\n");
-printf("* For Ceaser Cipher, press 2\n");
+printf("* For Ceaser Cipher, press 2\n\n");
+printf("Selection: ");
 scanf("%d", &type);
 printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
  
@@ -135,12 +165,12 @@ printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
     scanf("%d", &select);
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     
-    
+    //Prints encoded message
     if(select == 1)
-    printf("The original message was: %s\n\nThe Encoded text is: %s\n",message, encrypted_message);
-    
+    printf("The original message was: %s\n\nThe Encoded text is: %s\n\n\n\n",message, encrypted_message);
+    //Prints decoded message
     if(select == 2)
-    printf("The Decoded text is: %s\n",decrypted_message);
+    printf("The Decoded text is: %s\n\n\n\n",decrypted_message);
     
     return 0;
 } 
@@ -158,7 +188,7 @@ if(type == 2);
     scanf("%d", &select);
     printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     
-    
+    //If the user chooses to encrypt
     if(select == 1)
     {   
         //Asking user to enter Cipher key
@@ -183,11 +213,13 @@ if(type == 2);
 	
 	    //Printing the ciphered text
 	    caesarCipherEncode(plainText, key);
+	    
+	    printf("\n\n\n");
 	
 	    return 0; 
     }
     
-    
+    //If the user chooses to decrypt
     if(select == 2)
     {
         //Asking user to enter Cipher key
@@ -211,6 +243,8 @@ if(type == 2);
 	
 	    //Printing the ciphered text
 	    caesarCipherDecode(plainText, key);
+	    
+	    printf("\n\n\n");
 	
 	    return 0; 
     }
